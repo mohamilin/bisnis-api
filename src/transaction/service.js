@@ -3,7 +3,9 @@ const Model = ModelDatabase.sequelize.models;
 
 const ProductService = require("../product/service");
 const getAll = async () => {
-  return Model.data_transaction.findAll();
+  return Model.data_transaction.findAll({
+    include: ['user']
+  });
 };
 
 const addTransaction = async (payload) => {
@@ -18,7 +20,15 @@ const addTransaction = async (payload) => {
   });
 };
 
+const getTransactionByUserId = async(userId) => {
+  return Model.data_transaction.findAll({
+    where: {
+      user_id: userId
+    },
+  });
+}
 module.exports = {
   getAll,
   addTransaction,
+  getTransactionByUserId
 };

@@ -24,7 +24,9 @@ const getUserByPk = async (user_id) => {
 };
 
 const getAll = async () => {
-  return Model.data_user.findAll();
+  return Model.data_user.findAll({
+    include: ['transaction']
+  });
 };
 
 const deleteUser = async (payload) => {

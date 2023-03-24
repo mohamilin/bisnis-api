@@ -21,7 +21,21 @@ const addTransaction = CatchAsync(async(req, res) => {
         ResponseDesc: transaction
     })
 })
+
+const getTransactionByUserId = CatchAsync(async(req, res) => {
+    const {userId} = req.params
+    console.log(userId, 'id');
+    const transaction = await TransactionService.getTransactionByUserId(userId)
+    console.log(transaction, 'id');
+
+    return res.status(200).json({
+        success: true,
+        ResponseCode: "00",
+        ResponseDesc: transaction
+    })
+})
 module.exports = {
     getAll,
-    addTransaction
+    addTransaction,
+    getTransactionByUserId
 }
