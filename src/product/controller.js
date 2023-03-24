@@ -21,7 +21,32 @@ const addProduct = CatchAsync(async(req, res) => {
         ResponseDesc: products
     })
 })
+
+const updateProduct = CatchAsync(async(req, res) => {
+    const {productId} = req.params;
+
+    const products = await ProductService.updateProduct(productId, req.body)
+
+    return res.status(200).json({
+        success: true,
+        ResponseCode: "00",
+        ResponseDesc: products
+    })
+})
+const deleteProduct = CatchAsync(async(req, res) => {
+    const {productId} = req.params;
+
+    const products = await ProductService.deleteProduct(productId)
+
+    return res.status(200).json({
+        success: true,
+        ResponseCode: "00",
+        ResponseDesc: products
+    })
+})
 module.exports = {
     getAll,
-    addProduct
+    addProduct,
+    updateProduct,
+    deleteProduct
 }
