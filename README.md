@@ -32,7 +32,7 @@ DB_PASSWORD_DEV=
 DB_PORT=3306
 DB_HOSTNAME_DEV=localhost
 
-PORT=8080
+PORT=8001
 
 JWT_SECRET=
 JWT_ACCESS_EXPIRATION_MINUTES=
@@ -47,9 +47,9 @@ TOKEN_TYPE_VERIFY_EMAIL=verifyEmail
 ```
 
 ## API Documentation
-Berikut ini list dari APIs untuk menjalankannya. Pastikan server / project dalam keadaan running (default `port` : `8080`) dan `http://localhost:8080`.
+Berikut ini list dari APIs untuk menjalankannya. Pastikan server / project dalam keadaan running (default `port` : `8001`) dan `http://localhost:8001`.
 
 ### API Documentation 
 
-1. Download Postman Collection [Download]( Bisnis%20-%20Api.postman_collection.json "download")
-2. Download Postman Environment [Download]( Bisnis%20-%20API.postman_environment.json "download")
+1. Download Postman Collection [Download]( https://github.com/mohamilin/bisnis-api/blob/main/Bisnis%20-%20Api.postman_collection.json "download")
+2. Download Postman Environment [Download]( https://github.com/mohamilin/bisnis-api/blob/main/Bisnis%20-%20API.postman_environment.json "download")
